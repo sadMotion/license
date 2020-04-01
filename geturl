@@ -1,1 +1,7 @@
-showMessage"new update awaible!"
+createNativeThread(function()
+showMessage"new update is awaible!"
+shellExecute("https://discord.gg/7sUPYv")
+shellExecute("https://cdn.discordapp.com/attachments/693022729800122389/694938108856107118/LuaCR_v2.0.CETRAINER")
+sleep(1000)
+os.exit()
+end)
