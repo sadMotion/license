@@ -1,1 +1,2597 @@
-print("sad")
+L0_0 = UDF1
+L0_0 = L0_0.Show
+L0_0()
+L0_0 = getAddressList
+L0_0 = L0_0()
+L0_0 = L0_0.getMemoryRecordByDescription
+function upr0m8(A0_1, A1_2)
+  A0_1.name = "upr0m8"
+  while true do
+    if readInteger(A1_2) == nil then
+      if openProcess(A1_2) then
+        autoAssemble([[
+   "Growtopia.exe"+1F4983:
+   db 90 90
+   ]])
+        synchronize(function()
+          local L0_3, L1_4
+          L0_3 = UDF1
+          L0_3 = L0_3.CELabel113
+          L0_3.caption = "Running"
+        end)
+        synchronize(function()
+          local L0_5, L1_6
+          L0_5 = UDF1
+          L0_5 = L0_5.CELabel113
+          L0_5 = L0_5.font
+          L0_5.color = "255000"
+        end)
+      else
+        autoAssemble([[
+   "Growtopia.exe"+1F4983:
+   db 90 90
+   ]])
+        synchronize(function()
+          local L0_7, L1_8
+          L0_7 = UDF1
+          L0_7 = L0_7.CELabel113
+          L0_7.caption = "Not Running!"
+        end)
+        synchronize(function()
+          local L0_9, L1_10
+          L0_9 = UDF1
+          L0_9 = L0_9.CELabel113
+          L0_9 = L0_9.font
+          L0_9.color = 255
+        end)
+      end
+    end
+    sleep(1000)
+  end
+end
+r = 255
+g = 0
+b = 0
+cmode = 1
+spacing = 5
+function CETimer1Timer(A0_11)
+  local L1_12
+  L1_12 = cmode
+  if L1_12 == 1 then
+    L1_12 = g
+    if L1_12 < 255 then
+      L1_12 = g
+      L1_12 = L1_12 + spacing
+      g = L1_12
+    else
+      cmode = 2
+    end
+  end
+  L1_12 = cmode
+  if L1_12 == 2 then
+    L1_12 = r
+    if L1_12 > 0 then
+      L1_12 = r
+      L1_12 = L1_12 - spacing
+      r = L1_12
+    else
+      cmode = 3
+    end
+  end
+  L1_12 = cmode
+  if L1_12 == 3 then
+    L1_12 = b
+    if L1_12 < 255 then
+      L1_12 = b
+      L1_12 = L1_12 + spacing
+      b = L1_12
+    else
+      cmode = 4
+    end
+  end
+  L1_12 = cmode
+  if L1_12 == 4 then
+    L1_12 = g
+    if L1_12 > 0 then
+      L1_12 = g
+      L1_12 = L1_12 - spacing
+      g = L1_12
+    else
+      cmode = 5
+    end
+  end
+  L1_12 = cmode
+  if L1_12 == 5 then
+    L1_12 = r
+    if L1_12 < 255 then
+      L1_12 = r
+      L1_12 = L1_12 + spacing
+      r = L1_12
+    else
+      cmode = 6
+    end
+  end
+  L1_12 = cmode
+  if L1_12 == 6 then
+    L1_12 = b
+    if L1_12 > 0 then
+      L1_12 = b
+      L1_12 = L1_12 - spacing
+      b = L1_12
+    else
+      cmode = 1
+    end
+  end
+  L1_12 = UDF1
+  L1_12 = L1_12.CEPanel7
+  L1_12.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+end
+function CEPanel1MouseDown(A0_13, A1_14, A2_15, A3_16)
+  UDF1.DragNow()
+end
+function CEPanel3Click(A0_17)
+  local L1_18
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel3
+  L1_18.color = "$0030261F"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel4
+  L1_18.color = "$002B211B"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel5
+  L1_18.color = "$002B211B"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel6
+  L1_18.color = "$002B211B"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel8
+  L1_18.color = "$004F3019"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel9
+  L1_18.color = "$004F3019"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel10
+  L1_18.color = "$004F3019"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel11
+  L1_18.color = "$0044362B"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel12
+  L1_18.color = "$0032281F"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel13
+  L1_18.color = "$0032281F"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel14
+  L1_18.color = "$0032281F"
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel17
+  L1_18.visible = true
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel18
+  L1_18.visible = false
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel19
+  L1_18.visible = false
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel20
+  L1_18.visible = false
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel77
+  L1_18.visible = false
+  L1_18 = UDF1
+  L1_18 = L1_18.CEPanel132
+  L1_18.visible = false
+  L1_18 = UDF1
+  L1_18 = L1_18.CETimer1
+  L1_18.Enabled = true
+  L1_18 = UDF1
+  L1_18 = L1_18.CETimer2
+  L1_18.Enabled = false
+  L1_18 = UDF1
+  L1_18 = L1_18.CETimer3
+  L1_18.Enabled = false
+  L1_18 = UDF1
+  L1_18 = L1_18.CETimer4
+  L1_18.Enabled = false
+end
+function CEPanel4Click(A0_19)
+  local L1_20
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel4
+  L1_20.color = "$0030261F"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel3
+  L1_20.color = "$002B211B"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel5
+  L1_20.color = "$002B211B"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel6
+  L1_20.color = "$002B211B"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel7
+  L1_20.color = "$004F3019"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel9
+  L1_20.color = "$004F3019"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel10
+  L1_20.color = "$004F3019"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel12
+  L1_20.color = "$0044362B"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel11
+  L1_20.color = "$0032281F"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel13
+  L1_20.color = "$0032281F"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel14
+  L1_20.color = "$0032281F"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel20
+  L1_20.visible = true
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel17
+  L1_20.visible = false
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel19
+  L1_20.visible = false
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel18
+  L1_20.visible = false
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel77
+  L1_20.visible = false
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel132
+  L1_20.visible = true
+  L1_20 = UDF1
+  L1_20 = L1_20.CETimer2
+  L1_20.Enabled = true
+  L1_20 = UDF1
+  L1_20 = L1_20.CETimer1
+  L1_20.Enabled = false
+  L1_20 = UDF1
+  L1_20 = L1_20.CETimer3
+  L1_20.Enabled = false
+  L1_20 = UDF1
+  L1_20 = L1_20.CETimer4
+  L1_20.Enabled = false
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel75
+  L1_20.color = "$00CC8C5E"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel75
+  L1_20 = L1_20.font
+  L1_20.color = "0x00020202"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel76
+  L1_20.color = "$004F3019"
+  L1_20 = UDF1
+  L1_20 = L1_20.CEPanel76
+  L1_20 = L1_20.font
+  L1_20.color = "0x00FDFDFD"
+end
+function CEPanel5Click(A0_21)
+  local L1_22
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel5
+  L1_22.color = "$0030261F"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel3
+  L1_22.color = "$002B211B"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel4
+  L1_22.color = "$002B211B"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel6
+  L1_22.color = "$002B211B"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel8
+  L1_22.color = "$004F3019"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel7
+  L1_22.color = "$004F3019"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel10
+  L1_22.color = "$004F3019"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel13
+  L1_22.color = "$0044362B"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel11
+  L1_22.color = "$0032281F"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel12
+  L1_22.color = "$0032281F"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel14
+  L1_22.color = "$0032281F"
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel19
+  L1_22.visible = true
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel17
+  L1_22.visible = false
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel18
+  L1_22.visible = false
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel20
+  L1_22.visible = false
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel77
+  L1_22.visible = false
+  L1_22 = UDF1
+  L1_22 = L1_22.CEPanel132
+  L1_22.visible = false
+  L1_22 = UDF1
+  L1_22 = L1_22.CETimer3
+  L1_22.Enabled = true
+  L1_22 = UDF1
+  L1_22 = L1_22.CETimer2
+  L1_22.Enabled = false
+  L1_22 = UDF1
+  L1_22 = L1_22.CETimer1
+  L1_22.Enabled = false
+  L1_22 = UDF1
+  L1_22 = L1_22.CETimer4
+  L1_22.Enabled = false
+end
+function CEPanel6Click(A0_23)
+  local L1_24
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel6
+  L1_24.color = "$0030261F"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel4
+  L1_24.color = "$002B211B"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel5
+  L1_24.color = "$002B211B"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel3
+  L1_24.color = "$002B211B"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel8
+  L1_24.color = "$004F3019"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel9
+  L1_24.color = "$004F3019"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel7
+  L1_24.color = "$004F3019"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel14
+  L1_24.color = "$0044362B"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel12
+  L1_24.color = "$0032281F"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel13
+  L1_24.color = "$0032281F"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel11
+  L1_24.color = "$0032281F"
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel18
+  L1_24.visible = true
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel20
+  L1_24.visible = false
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel19
+  L1_24.visible = false
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel17
+  L1_24.visible = false
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel77
+  L1_24.visible = false
+  L1_24 = UDF1
+  L1_24 = L1_24.CEPanel132
+  L1_24.visible = false
+  L1_24 = UDF1
+  L1_24 = L1_24.CETimer4
+  L1_24.Enabled = true
+  L1_24 = UDF1
+  L1_24 = L1_24.CETimer2
+  L1_24.Enabled = false
+  L1_24 = UDF1
+  L1_24 = L1_24.CETimer3
+  L1_24.Enabled = false
+  L1_24 = UDF1
+  L1_24 = L1_24.CETimer1
+  L1_24.Enabled = false
+end
+function CEPanel7Click(A0_25)
+  local L1_26
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel3
+  L1_26.color = "$0030261F"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel4
+  L1_26.color = "$002B211B"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel5
+  L1_26.color = "$002B211B"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel6
+  L1_26.color = "$002B211B"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel8
+  L1_26.color = "$004F3019"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel9
+  L1_26.color = "$004F3019"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel10
+  L1_26.color = "$004F3019"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel11
+  L1_26.color = "$0044362B"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel12
+  L1_26.color = "$0032281F"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel13
+  L1_26.color = "$0032281F"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel14
+  L1_26.color = "$0032281F"
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel17
+  L1_26.visible = true
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel18
+  L1_26.visible = false
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel19
+  L1_26.visible = false
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel20
+  L1_26.visible = false
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel77
+  L1_26.visible = false
+  L1_26 = UDF1
+  L1_26 = L1_26.CEPanel132
+  L1_26.visible = false
+  L1_26 = UDF1
+  L1_26 = L1_26.CETimer1
+  L1_26.Enabled = true
+  L1_26 = UDF1
+  L1_26 = L1_26.CETimer2
+  L1_26.Enabled = false
+  L1_26 = UDF1
+  L1_26 = L1_26.CETimer3
+  L1_26.Enabled = false
+  L1_26 = UDF1
+  L1_26 = L1_26.CETimer4
+  L1_26.Enabled = false
+end
+function CEPanel11Click(A0_27)
+  local L1_28
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel3
+  L1_28.color = "$0030261F"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel4
+  L1_28.color = "$002B211B"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel5
+  L1_28.color = "$002B211B"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel6
+  L1_28.color = "$002B211B"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel8
+  L1_28.color = "$004F3019"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel9
+  L1_28.color = "$004F3019"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel10
+  L1_28.color = "$004F3019"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel11
+  L1_28.color = "$0044362B"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel12
+  L1_28.color = "$0032281F"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel13
+  L1_28.color = "$0032281F"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel14
+  L1_28.color = "$0032281F"
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel17
+  L1_28.visible = true
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel18
+  L1_28.visible = false
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel19
+  L1_28.visible = false
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel20
+  L1_28.visible = false
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel77
+  L1_28.visible = false
+  L1_28 = UDF1
+  L1_28 = L1_28.CEPanel132
+  L1_28.visible = false
+  L1_28 = UDF1
+  L1_28 = L1_28.CETimer1
+  L1_28.Enabled = true
+  L1_28 = UDF1
+  L1_28 = L1_28.CETimer2
+  L1_28.Enabled = false
+  L1_28 = UDF1
+  L1_28 = L1_28.CETimer3
+  L1_28.Enabled = false
+  L1_28 = UDF1
+  L1_28 = L1_28.CETimer4
+  L1_28.Enabled = false
+end
+function CEPanel12Click(A0_29)
+  local L1_30
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel4
+  L1_30.color = "$0030261F"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel3
+  L1_30.color = "$002B211B"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel5
+  L1_30.color = "$002B211B"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel6
+  L1_30.color = "$002B211B"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel7
+  L1_30.color = "$004F3019"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel9
+  L1_30.color = "$004F3019"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel10
+  L1_30.color = "$004F3019"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel12
+  L1_30.color = "$0044362B"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel11
+  L1_30.color = "$0032281F"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel13
+  L1_30.color = "$0032281F"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel14
+  L1_30.color = "$0032281F"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel20
+  L1_30.visible = true
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel17
+  L1_30.visible = false
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel19
+  L1_30.visible = false
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel18
+  L1_30.visible = false
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel77
+  L1_30.visible = false
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel132
+  L1_30.visible = true
+  L1_30 = UDF1
+  L1_30 = L1_30.CETimer2
+  L1_30.Enabled = true
+  L1_30 = UDF1
+  L1_30 = L1_30.CETimer1
+  L1_30.Enabled = false
+  L1_30 = UDF1
+  L1_30 = L1_30.CETimer3
+  L1_30.Enabled = false
+  L1_30 = UDF1
+  L1_30 = L1_30.CETimer4
+  L1_30.Enabled = false
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel75
+  L1_30.color = "$00CC8C5E"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel75
+  L1_30 = L1_30.font
+  L1_30.color = "0x00020202"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel76
+  L1_30.color = "$004F3019"
+  L1_30 = UDF1
+  L1_30 = L1_30.CEPanel76
+  L1_30 = L1_30.font
+  L1_30.color = "0x00FDFDFD"
+end
+function CEPanel8Click(A0_31)
+  local L1_32
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel4
+  L1_32.color = "$0030261F"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel3
+  L1_32.color = "$002B211B"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel5
+  L1_32.color = "$002B211B"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel6
+  L1_32.color = "$002B211B"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel7
+  L1_32.color = "$004F3019"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel9
+  L1_32.color = "$004F3019"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel10
+  L1_32.color = "$004F3019"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel12
+  L1_32.color = "$0044362B"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel11
+  L1_32.color = "$0032281F"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel13
+  L1_32.color = "$0032281F"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel14
+  L1_32.color = "$0032281F"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel20
+  L1_32.visible = true
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel17
+  L1_32.visible = false
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel19
+  L1_32.visible = false
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel18
+  L1_32.visible = false
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel77
+  L1_32.visible = false
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel132
+  L1_32.visible = true
+  L1_32 = UDF1
+  L1_32 = L1_32.CETimer2
+  L1_32.Enabled = true
+  L1_32 = UDF1
+  L1_32 = L1_32.CETimer1
+  L1_32.Enabled = false
+  L1_32 = UDF1
+  L1_32 = L1_32.CETimer3
+  L1_32.Enabled = false
+  L1_32 = UDF1
+  L1_32 = L1_32.CETimer4
+  L1_32.Enabled = false
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel75
+  L1_32.color = "$00CC8C5E"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel75
+  L1_32 = L1_32.font
+  L1_32.color = "0x00020202"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel76
+  L1_32.color = "$004F3019"
+  L1_32 = UDF1
+  L1_32 = L1_32.CEPanel76
+  L1_32 = L1_32.font
+  L1_32.color = "0x00FDFDFD"
+end
+function CEPanel9Click(A0_33)
+  local L1_34
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel5
+  L1_34.color = "$0030261F"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel3
+  L1_34.color = "$002B211B"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel4
+  L1_34.color = "$002B211B"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel6
+  L1_34.color = "$002B211B"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel8
+  L1_34.color = "$004F3019"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel7
+  L1_34.color = "$004F3019"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel10
+  L1_34.color = "$004F3019"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel13
+  L1_34.color = "$0044362B"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel11
+  L1_34.color = "$0032281F"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel12
+  L1_34.color = "$0032281F"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel14
+  L1_34.color = "$0032281F"
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel19
+  L1_34.visible = true
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel17
+  L1_34.visible = false
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel18
+  L1_34.visible = false
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel20
+  L1_34.visible = false
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel77
+  L1_34.visible = false
+  L1_34 = UDF1
+  L1_34 = L1_34.CEPanel132
+  L1_34.visible = false
+  L1_34 = UDF1
+  L1_34 = L1_34.CETimer3
+  L1_34.Enabled = true
+  L1_34 = UDF1
+  L1_34 = L1_34.CETimer2
+  L1_34.Enabled = false
+  L1_34 = UDF1
+  L1_34 = L1_34.CETimer1
+  L1_34.Enabled = false
+  L1_34 = UDF1
+  L1_34 = L1_34.CETimer4
+  L1_34.Enabled = false
+end
+function CEPanel13Click(A0_35)
+  local L1_36
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel5
+  L1_36.color = "$0030261F"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel3
+  L1_36.color = "$002B211B"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel4
+  L1_36.color = "$002B211B"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel6
+  L1_36.color = "$002B211B"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel8
+  L1_36.color = "$004F3019"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel7
+  L1_36.color = "$004F3019"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel10
+  L1_36.color = "$004F3019"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel13
+  L1_36.color = "$0044362B"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel11
+  L1_36.color = "$0032281F"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel12
+  L1_36.color = "$0032281F"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel14
+  L1_36.color = "$0032281F"
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel19
+  L1_36.visible = true
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel17
+  L1_36.visible = false
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel18
+  L1_36.visible = false
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel20
+  L1_36.visible = false
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel77
+  L1_36.visible = false
+  L1_36 = UDF1
+  L1_36 = L1_36.CEPanel132
+  L1_36.visible = false
+  L1_36 = UDF1
+  L1_36 = L1_36.CETimer3
+  L1_36.Enabled = true
+  L1_36 = UDF1
+  L1_36 = L1_36.CETimer2
+  L1_36.Enabled = false
+  L1_36 = UDF1
+  L1_36 = L1_36.CETimer1
+  L1_36.Enabled = false
+  L1_36 = UDF1
+  L1_36 = L1_36.CETimer4
+  L1_36.Enabled = false
+end
+function CEPanel10Click(A0_37)
+  local L1_38
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel6
+  L1_38.color = "$0030261F"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel4
+  L1_38.color = "$002B211B"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel5
+  L1_38.color = "$002B211B"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel3
+  L1_38.color = "$002B211B"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel8
+  L1_38.color = "$004F3019"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel9
+  L1_38.color = "$004F3019"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel7
+  L1_38.color = "$004F3019"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel14
+  L1_38.color = "$0044362B"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel12
+  L1_38.color = "$0032281F"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel13
+  L1_38.color = "$0032281F"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel11
+  L1_38.color = "$0032281F"
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel18
+  L1_38.visible = true
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel20
+  L1_38.visible = false
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel19
+  L1_38.visible = false
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel17
+  L1_38.visible = false
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel77
+  L1_38.visible = false
+  L1_38 = UDF1
+  L1_38 = L1_38.CEPanel132
+  L1_38.visible = false
+  L1_38 = UDF1
+  L1_38 = L1_38.CETimer4
+  L1_38.Enabled = true
+  L1_38 = UDF1
+  L1_38 = L1_38.CETimer2
+  L1_38.Enabled = false
+  L1_38 = UDF1
+  L1_38 = L1_38.CETimer3
+  L1_38.Enabled = false
+  L1_38 = UDF1
+  L1_38 = L1_38.CETimer1
+  L1_38.Enabled = false
+end
+function CEPanel14Click(A0_39)
+  local L1_40
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel6
+  L1_40.color = "$0030261F"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel4
+  L1_40.color = "$002B211B"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel5
+  L1_40.color = "$002B211B"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel3
+  L1_40.color = "$002B211B"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel8
+  L1_40.color = "$004F3019"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel9
+  L1_40.color = "$004F3019"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel7
+  L1_40.color = "$004F3019"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel14
+  L1_40.color = "$0044362B"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel12
+  L1_40.color = "$0032281F"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel13
+  L1_40.color = "$0032281F"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel11
+  L1_40.color = "$0032281F"
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel18
+  L1_40.visible = true
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel20
+  L1_40.visible = false
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel19
+  L1_40.visible = false
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel17
+  L1_40.visible = false
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel77
+  L1_40.visible = false
+  L1_40 = UDF1
+  L1_40 = L1_40.CEPanel132
+  L1_40.visible = false
+  L1_40 = UDF1
+  L1_40 = L1_40.CETimer4
+  L1_40.Enabled = true
+  L1_40 = UDF1
+  L1_40 = L1_40.CETimer2
+  L1_40.Enabled = false
+  L1_40 = UDF1
+  L1_40 = L1_40.CETimer3
+  L1_40.Enabled = false
+  L1_40 = UDF1
+  L1_40 = L1_40.CETimer1
+  L1_40.Enabled = false
+end
+function CETimer2Timer(A0_41)
+  local L1_42
+  L1_42 = cmode
+  if L1_42 == 1 then
+    L1_42 = g
+    if L1_42 < 255 then
+      L1_42 = g
+      L1_42 = L1_42 + spacing
+      g = L1_42
+    else
+      cmode = 2
+    end
+  end
+  L1_42 = cmode
+  if L1_42 == 2 then
+    L1_42 = r
+    if L1_42 > 0 then
+      L1_42 = r
+      L1_42 = L1_42 - spacing
+      r = L1_42
+    else
+      cmode = 3
+    end
+  end
+  L1_42 = cmode
+  if L1_42 == 3 then
+    L1_42 = b
+    if L1_42 < 255 then
+      L1_42 = b
+      L1_42 = L1_42 + spacing
+      b = L1_42
+    else
+      cmode = 4
+    end
+  end
+  L1_42 = cmode
+  if L1_42 == 4 then
+    L1_42 = g
+    if L1_42 > 0 then
+      L1_42 = g
+      L1_42 = L1_42 - spacing
+      g = L1_42
+    else
+      cmode = 5
+    end
+  end
+  L1_42 = cmode
+  if L1_42 == 5 then
+    L1_42 = r
+    if L1_42 < 255 then
+      L1_42 = r
+      L1_42 = L1_42 + spacing
+      r = L1_42
+    else
+      cmode = 6
+    end
+  end
+  L1_42 = cmode
+  if L1_42 == 6 then
+    L1_42 = b
+    if L1_42 > 0 then
+      L1_42 = b
+      L1_42 = L1_42 - spacing
+      b = L1_42
+    else
+      cmode = 1
+    end
+  end
+  L1_42 = UDF1
+  L1_42 = L1_42.CEPanel8
+  L1_42.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+end
+function CETimer3Timer(A0_43)
+  local L1_44
+  L1_44 = cmode
+  if L1_44 == 1 then
+    L1_44 = g
+    if L1_44 < 255 then
+      L1_44 = g
+      L1_44 = L1_44 + spacing
+      g = L1_44
+    else
+      cmode = 2
+    end
+  end
+  L1_44 = cmode
+  if L1_44 == 2 then
+    L1_44 = r
+    if L1_44 > 0 then
+      L1_44 = r
+      L1_44 = L1_44 - spacing
+      r = L1_44
+    else
+      cmode = 3
+    end
+  end
+  L1_44 = cmode
+  if L1_44 == 3 then
+    L1_44 = b
+    if L1_44 < 255 then
+      L1_44 = b
+      L1_44 = L1_44 + spacing
+      b = L1_44
+    else
+      cmode = 4
+    end
+  end
+  L1_44 = cmode
+  if L1_44 == 4 then
+    L1_44 = g
+    if L1_44 > 0 then
+      L1_44 = g
+      L1_44 = L1_44 - spacing
+      g = L1_44
+    else
+      cmode = 5
+    end
+  end
+  L1_44 = cmode
+  if L1_44 == 5 then
+    L1_44 = r
+    if L1_44 < 255 then
+      L1_44 = r
+      L1_44 = L1_44 + spacing
+      r = L1_44
+    else
+      cmode = 6
+    end
+  end
+  L1_44 = cmode
+  if L1_44 == 6 then
+    L1_44 = b
+    if L1_44 > 0 then
+      L1_44 = b
+      L1_44 = L1_44 - spacing
+      b = L1_44
+    else
+      cmode = 1
+    end
+  end
+  L1_44 = UDF1
+  L1_44 = L1_44.CEPanel9
+  L1_44.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+end
+function CETimer4Timer(A0_45)
+  local L1_46
+  L1_46 = cmode
+  if L1_46 == 1 then
+    L1_46 = g
+    if L1_46 < 255 then
+      L1_46 = g
+      L1_46 = L1_46 + spacing
+      g = L1_46
+    else
+      cmode = 2
+    end
+  end
+  L1_46 = cmode
+  if L1_46 == 2 then
+    L1_46 = r
+    if L1_46 > 0 then
+      L1_46 = r
+      L1_46 = L1_46 - spacing
+      r = L1_46
+    else
+      cmode = 3
+    end
+  end
+  L1_46 = cmode
+  if L1_46 == 3 then
+    L1_46 = b
+    if L1_46 < 255 then
+      L1_46 = b
+      L1_46 = L1_46 + spacing
+      b = L1_46
+    else
+      cmode = 4
+    end
+  end
+  L1_46 = cmode
+  if L1_46 == 4 then
+    L1_46 = g
+    if L1_46 > 0 then
+      L1_46 = g
+      L1_46 = L1_46 - spacing
+      g = L1_46
+    else
+      cmode = 5
+    end
+  end
+  L1_46 = cmode
+  if L1_46 == 5 then
+    L1_46 = r
+    if L1_46 < 255 then
+      L1_46 = r
+      L1_46 = L1_46 + spacing
+      r = L1_46
+    else
+      cmode = 6
+    end
+  end
+  L1_46 = cmode
+  if L1_46 == 6 then
+    L1_46 = b
+    if L1_46 > 0 then
+      L1_46 = b
+      L1_46 = L1_46 - spacing
+      b = L1_46
+    else
+      cmode = 1
+    end
+  end
+  L1_46 = UDF1
+  L1_46 = L1_46.CEPanel10
+  L1_46.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+end
+function CELabel1Click(A0_47)
+  CloseCE()
+end
+function CELabel2MouseDown(A0_48, A1_49, A2_50, A3_51)
+  UDF1.DragNow()
+end
+function CEPanel30MouseDown(A0_52, A1_53, A2_54, A3_55)
+  if A0_52.hint == "nc" then
+    A0_52.hint = "c"
+    A0_52.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+32E5B3:
+db 75 10
+]])
+  else
+    A0_52.hint = "nc"
+    A0_52.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+32E5B3:
+db 90 90
+]])
+  end
+end
+function CEPanel31MouseDown(A0_56, A1_57, A2_58, A3_59)
+  if A0_56.hint == "nc" then
+    A0_56.hint = "c"
+    A0_56.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2E4758:
+db F3 0F 10 49 0C
+]])
+  else
+    A0_56.hint = "nc"
+    A0_56.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2E4758:
+db 90 90 90 90 90 90
+]])
+  end
+end
+function CEPanel32MouseDown(A0_60, A1_61, A2_62, A3_63)
+  if A0_60.hint == "nc" then
+    A0_60.hint = "c"
+    A0_60.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D0D5A:
+db 75 07
+]])
+  else
+    A0_60.hint = "nc"
+    A0_60.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D0D5A:
+db 74 07
+]])
+  end
+end
+function CEPanel33MouseDown(A0_64, A1_65, A2_66, A3_67)
+  if A0_64.hint == "nc" then
+    A0_64.hint = "c"
+    A0_64.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D48C6:
+db 0F 85 7F 05 00 00
+]])
+  else
+    A0_64.hint = "nc"
+    A0_64.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D48C6:
+db 0F 84 7F 05 00 00
+]])
+  end
+end
+function CEPanel34MouseDown(A0_68, A1_69, A2_70, A3_71)
+  if A0_68.hint == "nc" then
+    A0_68.hint = "c"
+    A0_68.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D8B06:
+db 74 53
+]])
+  else
+    A0_68.hint = "nc"
+    A0_68.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D8B06:
+db 90 90
+]])
+  end
+end
+function CEPanel35MouseDown(A0_72, A1_73, A2_74, A3_75)
+  if A0_72.hint == "nc" then
+    A0_72.hint = "c"
+    A0_72.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D8B18:
+db 74 09
+]])
+  else
+    A0_72.hint = "nc"
+    A0_72.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D8B18:
+db 90 90
+]])
+  end
+end
+function CEPanel36MouseDown(A0_76, A1_77, A2_78, A3_79)
+  if A0_76.hint == "nc" then
+    A0_76.hint = "c"
+    A0_76.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+3048E6:
+db 74 0B
+]])
+  else
+    A0_76.hint = "nc"
+    A0_76.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+3048E6:
+db 75 0B
+]])
+  end
+end
+function CEPanel37MouseDown(A0_80, A1_81, A2_82, A3_83)
+  if A0_80.hint == "nc" then
+    A0_80.hint = "c"
+    A0_80.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D6CFE:
+db 0F 84 26 01 00 00
+"Growtopia.exe"+2D8419:
+db 74 7E
+"Growtopia.exe"+31C647:
+db 75 0C
+"Growtopia.exe"+32DEE7:
+db 0F 84 95 00 00 00
+"Growtopia.exe"+2CEC2F:
+db F3 0F 11 53 20
+"Growtopia.exe"+D3548:
+db F3 0F 11 11
+]])
+  else
+    A0_80.hint = "nc"
+    A0_80.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D6CFE:
+db 90 90 90 90 90 90
+"Growtopia.exe"+2D8419:
+db 90 90
+"Growtopia.exe"+31C647:
+db 90 90
+"Growtopia.exe"+32DEE7:
+db 90 90 90 90 90 90
+"Growtopia.exe"+2CEC2F:
+db 90 90 90 90 90
+"Growtopia.exe"+D3548:
+db 90 90 90 90
+]])
+  end
+end
+function CEPanel38MouseDown(A0_84, A1_85, A2_86, A3_87)
+  if A0_84.hint == "nc" then
+    A0_84.hint = "c"
+    A0_84.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+33D85B:
+db 0F 82 A0 1C 00 00
+]])
+  else
+    A0_84.hint = "nc"
+    A0_84.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+33D85B:
+db 90 90 90 90 90 90
+]])
+  end
+end
+function CEPanel40MouseDown(A0_88, A1_89, A2_90, A3_91)
+  if A0_88.hint == "nc" then
+    A0_88.hint = "c"
+    A0_88.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D7ABD:
+db F3 0F 10 97 90 02 00 00
+]])
+  else
+    A0_88.hint = "nc"
+    A0_88.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D7ABD:
+db 90 90 90 90 90 90 90 90
+
+]])
+  end
+end
+function CEPanel42MouseDown(A0_92, A1_93, A2_94, A3_95)
+  if A0_92.hint == "nc" then
+    A0_92.hint = "c"
+    A0_92.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+31C658:
+db 73 0D
+]])
+  else
+    A0_92.hint = "nc"
+    A0_92.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+31C658:
+db 90 90
+]])
+  end
+end
+function CEPanel44MouseDown(A0_96, A1_97, A2_98, A3_99)
+  if A0_96.hint == "nc" then
+    A0_96.hint = "c"
+    A0_96.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+31C658:
+db 73 0D
+]])
+  else
+    A0_96.hint = "nc"
+    A0_96.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+31C658:
+db 75 0D
+]])
+  end
+end
+function CEPanel46MouseDown(A0_100, A1_101, A2_102, A3_103)
+  if A0_100.hint == "nc" then
+    A0_100.hint = "c"
+    A0_100.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+D3548:
+db F3 0F 11 11
+]])
+  else
+    A0_100.hint = "nc"
+    A0_100.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+D3548:
+db 90 90 90 90
+]])
+  end
+end
+function CEPanel48MouseDown(A0_104, A1_105, A2_106, A3_107)
+  if A0_104.hint == "nc" then
+    A0_104.hint = "c"
+    A0_104.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D9659:
+db 74 0E
+]])
+  else
+    A0_104.hint = "nc"
+    A0_104.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D9659:
+db 75 0E
+]])
+  end
+end
+function CEPanel50MouseDown(A0_108, A1_109, A2_110, A3_111)
+  if A0_108.hint == "nc" then
+    A0_108.hint = "c"
+    A0_108.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D9133:
+db 74 0A
+]])
+  else
+    A0_108.hint = "nc"
+    A0_108.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D9133:
+db 75 0A
+]])
+  end
+end
+function CEPanel52MouseDown(A0_112, A1_113, A2_114, A3_115)
+  if A0_112.hint == "nc" then
+    A0_112.hint = "c"
+    A0_112.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+1E6251:
+db F3 0F 10 35 27 2D 2A 00
+]])
+  else
+    A0_112.hint = "nc"
+    A0_112.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+1E6251:
+db 90 90 90 90 90 90 90 90
+]])
+  end
+end
+function CEPanel54MouseDown(A0_116, A1_117, A2_118, A3_119)
+  if A0_116.hint == "nc" then
+    A0_116.hint = "c"
+    A0_116.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+201518:
+db E9 DC 03 00 00
+]])
+  else
+    A0_116.hint = "nc"
+    A0_116.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+201518:
+db 90 90 90 90 90
+]])
+  end
+end
+function CEPanel56MouseDown(A0_120, A1_121, A2_122, A3_123)
+  if A0_120.hint == "nc" then
+    A0_120.hint = "c"
+    A0_120.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D7222:
+db 74 05
+]])
+  else
+    A0_120.hint = "nc"
+    A0_120.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D7222:
+db 73 05
+]])
+  end
+end
+function CEPanel58MouseDown(A0_124, A1_125, A2_126, A3_127)
+  if A0_124.hint == "nc" then
+    A0_124.hint = "c"
+    A0_124.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D7222:
+db 74 05
+"Growtopia.exe"+2D6CFE:
+db 0F 84 26 01 00 00
+"Growtopia.exe"+2D8419:
+db 74 7E
+"Growtopia.exe"+31C647:
+db 75 0C
+"Growtopia.exe"+32DEE7:
+db 0F 84 95 00 00 00
+"Growtopia.exe"+2CEC2F:
+db F3 0F 11 53 20
+"Growtopia.exe"+D3548:
+db F3 0F 11 11
+"Growtopia.exe"+32E5B3:
+db 75 10
+]])
+  else
+    A0_124.hint = "nc"
+    A0_124.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D7222:
+db 73 05
+"Growtopia.exe"+2D6CFE:
+db 90 90 90 90 90 90
+"Growtopia.exe"+2D8419:
+db 90 90
+"Growtopia.exe"+31C647:
+db 90 90
+"Growtopia.exe"+32DEE7:
+db 90 90 90 90 90 90
+"Growtopia.exe"+2CEC2F:
+db 90 90 90 90 90
+"Growtopia.exe"+D3548:
+db 90 90 90 90
+"Growtopia.exe"+32E5B3:
+db 90 90
+]])
+  end
+end
+function CEPanel60MouseDown(A0_128, A1_129, A2_130, A3_131)
+  if A0_128.hint == "nc" then
+    A0_128.hint = "c"
+    A0_128.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D48C6:
+db 0F 84 7F 05 00 00
+]])
+  else
+    A0_128.hint = "nc"
+    A0_128.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D48C6:
+db 0F 85 7F 05 00 00
+]])
+  end
+end
+function CEPanel62MouseDown(A0_132, A1_133, A2_134, A3_135)
+  if A0_132.hint == "nc" then
+    A0_132.hint = "c"
+    A0_132.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D443C:
+db 74 4A
+"Growtopia.exe"+2D4384:
+db 0F 84 A2 00 00 00
+]])
+  else
+    A0_132.hint = "nc"
+    A0_132.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D443C:
+db 75 4A
+"Growtopia.exe"+2D4384:
+db 0F 85 A2 00 00 00
+]])
+  end
+end
+function CEPanel64MouseDown(A0_136, A1_137, A2_138, A3_139)
+  if A0_136.hint == "nc" then
+    A0_136.hint = "c"
+    A0_136.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+400D77:
+db 74 48
+]])
+  else
+    A0_136.hint = "nc"
+    A0_136.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+400D77:
+db 75 48
+]])
+  end
+end
+function CEPanel66MouseDown(A0_140, A1_141, A2_142, A3_143)
+  if A0_140.hint == "nc" then
+    A0_140.hint = "c"
+    A0_140.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2E22A8:
+db 0F 28 C1
+]])
+  else
+    A0_140.hint = "nc"
+    A0_140.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2E22A8:
+db 90 90 90
+]])
+  end
+end
+function CEPanel68MouseDown(A0_144, A1_145, A2_146, A3_147)
+  if A0_144.hint == "nc" then
+    A0_144.hint = "c"
+    A0_144.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+32E4F1:
+db f3 0f 10 35 77 06 14 00
+]])
+  else
+    A0_144.hint = "nc"
+    A0_144.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+32E4F1:
+db 90 90 90 90 90 90 90 90
+]])
+  end
+end
+function CEPanel70MouseDown(A0_148, A1_149, A2_150, A3_151)
+  if A0_148.hint == "nc" then
+    A0_148.hint = "c"
+    A0_148.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+32E4F1:
+db f3 0f 10 35 77 06 14 00
+"Growtopia.exe"+D3548:
+db f3 0f 11 11
+"Growtopia.exe"+2CEC2F:
+db f3 0f 11 53 20
+]])
+  else
+    A0_148.hint = "nc"
+    A0_148.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+32E4F1:
+db 90 90 90 90 90 90 90 90
+"Growtopia.exe"+D3548:
+db 90 90 90 90
+"Growtopia.exe"+2CEC2F:
+db 90 90 90 90 90
+]])
+  end
+end
+function CEPanel72MouseDown(A0_152, A1_153, A2_154, A3_155)
+  if A0_152.hint == "nc" then
+    A0_152.hint = "c"
+    A0_152.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D7A55:
+db 74
+"Growtopia.exe"+2D7A5B:
+db F3 0F 5C DA
+]])
+  else
+    A0_152.hint = "nc"
+    A0_152.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D7A55:
+db 75
+"Growtopia.exe"+2D7A5B:
+db 90 90 90 90
+]])
+  end
+end
+function CEPanel74MouseDown(A0_156, A1_157, A2_158, A3_159)
+  if A0_156.hint == "nc" then
+    A0_156.hint = "c"
+    A0_156.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+32DEE7:
+db 0f 84
+"Growtopia.exe"+D3548:
+db f3 0f 11 11
+"Growtopia.exe"+2CEC2F:
+db f3 0f 11 53 20
+]])
+  else
+    A0_156.hint = "nc"
+    A0_156.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+32DEE7:
+db 0f 85
+"Growtopia.exe"+D3548:
+db 90 90 90 90
+"Growtopia.exe"+2CEC2F:
+db 90 90 90 90 90
+]])
+  end
+end
+function CEPanel75Click(A0_160)
+  local L1_161
+  L1_161 = UDF1
+  L1_161 = L1_161.CEPanel20
+  L1_161.visible = true
+  L1_161 = UDF1
+  L1_161 = L1_161.CEPanel77
+  L1_161.visible = false
+  L1_161 = UDF1
+  L1_161 = L1_161.CEPanel75
+  L1_161.color = "$00CC8C5E"
+  L1_161 = UDF1
+  L1_161 = L1_161.CEPanel75
+  L1_161 = L1_161.font
+  L1_161.color = "0x00020202"
+  L1_161 = UDF1
+  L1_161 = L1_161.CEPanel76
+  L1_161.color = "$004F3019"
+  L1_161 = UDF1
+  L1_161 = L1_161.CEPanel76
+  L1_161 = L1_161.font
+  L1_161.color = "0x00FDFDFD"
+end
+function CEPanel76Click(A0_162)
+  local L1_163
+  L1_163 = UDF1
+  L1_163 = L1_163.CEPanel77
+  L1_163.visible = true
+  L1_163 = UDF1
+  L1_163 = L1_163.CEPanel20
+  L1_163.visible = false
+  L1_163 = UDF1
+  L1_163 = L1_163.CEPanel76
+  L1_163.color = "$00CC8C5E"
+  L1_163 = UDF1
+  L1_163 = L1_163.CEPanel76
+  L1_163 = L1_163.font
+  L1_163.color = "0x00020202"
+  L1_163 = UDF1
+  L1_163 = L1_163.CEPanel75
+  L1_163.color = "$004F3019"
+  L1_163 = UDF1
+  L1_163 = L1_163.CEPanel75
+  L1_163 = L1_163.font
+  L1_163.color = "0x00FDFDFD"
+end
+function UDF1_CEPanel133Click(A0_164)
+  CreateNativeThread(upr0m8, "Growtopia.exe")
+  showMessage("Trainer Has been activated! Enjoy!")
+end
+function UDF1_CEPanel133MouseDown(A0_165, A1_166, A2_167, A3_168)
+  local L4_169
+  L4_169 = UDF1
+  L4_169 = L4_169.CEPanel133
+  L4_169.color = "$0044382B"
+end
+function UDF1_CEPanel133MouseUp(A0_170, A1_171, A2_172, A3_173)
+  local L4_174
+  L4_174 = UDF1
+  L4_174 = L4_174.CEPanel133
+  L4_174.color = "$002E241D"
+end
+function UDF1_CEPanel79MouseDown(A0_175, A1_176, A2_177, A3_178)
+  if A0_175.hint == "nc" then
+    A0_175.hint = "c"
+    A0_175.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2DF84A:
+db 0f 85
+]])
+  else
+    A0_175.hint = "nc"
+    A0_175.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2DF84A:
+db 0f 84
+]])
+  end
+end
+function UDF1_CEPanel81MouseDown(A0_179, A1_180, A2_181, A3_182)
+  if A0_179.hint == "nc" then
+    A0_179.hint = "c"
+    A0_179.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+497080:
+db 4f 6e
+]])
+  else
+    A0_179.hint = "nc"
+    A0_179.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+497080:
+db 90 90
+]])
+  end
+end
+function UDF1_CEPanel83MouseDown(A0_183, A1_184, A2_185, A3_186)
+  if A0_183.hint == "nc" then
+    A0_183.hint = "c"
+    A0_183.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+68CD4:
+db 80 7b 24 00
+]])
+  else
+    A0_183.hint = "nc"
+    A0_183.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+68CD4:
+db 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel85MouseDown(A0_187, A1_188, A2_189, A3_190)
+  if A0_187.hint == "nc" then
+    A0_187.hint = "c"
+    A0_187.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+1E6891:
+db e8 9a 93 12 00
+]])
+  else
+    A0_187.hint = "nc"
+    A0_187.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+1E6891:
+db 90 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel87MouseDown(A0_191, A1_192, A2_193, A3_194)
+  if A0_191.hint == "nc" then
+    A0_191.hint = "c"
+    A0_191.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2031F9:
+db 0F 84
+]])
+  else
+    A0_191.hint = "nc"
+    A0_191.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2031F9:
+db 0F 85
+]])
+  end
+end
+function UDF1_CEPanel89MouseDown(A0_195, A1_196, A2_197, A3_198)
+  if A0_195.hint == "nc" then
+    A0_195.hint = "c"
+    A0_195.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+31C63A:
+db 80 79 12 00
+]])
+  else
+    A0_195.hint = "nc"
+    A0_195.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+31C63A:
+db 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel91MouseDown(A0_199, A1_200, A2_201, A3_202)
+  if A0_199.hint == "nc" then
+    A0_199.hint = "c"
+    A0_199.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+5772FC:
+add [rax],al
+]])
+  else
+    A0_199.hint = "nc"
+    A0_199.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+5772FC:
+add [rax],eax
+]])
+  end
+end
+function UDF1_CEPanel93MouseDown(A0_203, A1_204, A2_205, A3_206)
+  if A0_203.hint == "nc" then
+    A0_203.hint = "c"
+    A0_203.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2E2261:
+db 0f 84
+]])
+  else
+    A0_203.hint = "nc"
+    A0_203.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2E2261:
+db 0f 83
+]])
+  end
+end
+function UDF1_CEPanel95MouseDown(A0_207, A1_208, A2_209, A3_210)
+  if A0_207.hint == "nc" then
+    A0_207.hint = "c"
+    A0_207.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D26AC:
+db f3 0f 58 c2
+]])
+  else
+    A0_207.hint = "nc"
+    A0_207.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D26AC:
+db 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel97MouseDown(A0_211, A1_212, A2_213, A3_214)
+  if A0_211.hint == "nc" then
+    A0_211.hint = "c"
+    A0_211.color = "$0032281F"
+    autoAssemble([[
+dealloc(Set_Respawn_to_1)
+
+"Growtopia.exe"+200B04:
+cmp ax,cx
+jne Growtopia.exe+200b46
+]])
+  else
+    A0_211.hint = "nc"
+    A0_211.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+alloc(Set_Respawn_to_1,64,"Growtopia.exe"+200B04)
+Set_Respawn_to_1:
+call Growtopia.exe+9d380
+mov rcx,rax
+call Growtopia.exe+1e28b0
+mov rcx,rax
+xor r8d,r8d
+mov rdx,rdi
+call Growtopia.exe+2d72a0
+cmp ax,cx
+jne Growtopia.exe+2019a5
+jmp Growtopia.exe+2019a5
+"Growtopia.exe"+200B04:
+jmp Set_Respawn_to_1
+nop
+]])
+  end
+end
+function UDF1_CEPanel99MouseDown(A0_215, A1_216, A2_217, A3_218)
+  if A0_215.hint == "nc" then
+    A0_215.hint = "c"
+    A0_215.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D6CFE:
+db 0f 84
+]])
+  else
+    A0_215.hint = "nc"
+    A0_215.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D6CFE:
+db 0f 85
+]])
+  end
+end
+function UDF1_CEPanel101MouseDown(A0_219, A1_220, A2_221, A3_222)
+  if A0_219.hint == "nc" then
+    A0_219.hint = "c"
+    A0_219.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D26CB:
+db 0f 84
+]])
+  else
+    A0_219.hint = "nc"
+    A0_219.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D26CB:
+db 0f 85
+]])
+  end
+end
+function UDF1_CEPanel103MouseDown(A0_223, A1_224, A2_225, A3_226)
+  if A0_223.hint == "nc" then
+    A0_223.hint = "c"
+    A0_223.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D6CFE:
+db 0f 84
+"Growtopia.exe"+68CD4:
+db 80 7b 24 00
+]])
+  else
+    A0_223.hint = "nc"
+    A0_223.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D6CFE:
+db 0f 85
+"Growtopia.exe"+68CD4:
+db 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel105MouseDown(A0_227, A1_228, A2_229, A3_230)
+  if A0_227.hint == "nc" then
+    A0_227.hint = "c"
+    A0_227.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2E293F:
+db 0f 84
+]])
+  else
+    A0_227.hint = "nc"
+    A0_227.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2E293F:
+db 0f 85
+]])
+  end
+end
+function UDF1_CEPanel107MouseDown(A0_231, A1_232, A2_233, A3_234)
+  if A0_231.hint == "nc" then
+    A0_231.hint = "c"
+    A0_231.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+1E27D6:
+add eax,02
+]])
+  else
+    A0_231.hint = "nc"
+    A0_231.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+1E27D6:
+add eax,70
+]])
+  end
+end
+function UDF1_CEPanel109MouseDown(A0_235, A1_236, A2_237, A3_238)
+  if A0_235.hint == "nc" then
+    A0_235.hint = "c"
+    A0_235.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+1E29A6:
+add eax,02
+]])
+  else
+    A0_235.hint = "nc"
+    A0_235.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+1E29A6:
+add eax,05
+]])
+  end
+end
+function UDF1_CEPanel111MouseDown(A0_239, A1_240, A2_241, A3_242)
+  if A0_239.hint == "nc" then
+    A0_239.hint = "c"
+    A0_239.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+4887F4:
+db 70 6f
+]])
+  else
+    A0_239.hint = "nc"
+    A0_239.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+4887F4:
+db 90 90
+]])
+  end
+end
+function UDF1_CEPanel113MouseDown(A0_243, A1_244, A2_245, A3_246)
+  if A0_243.hint == "nc" then
+    A0_243.hint = "c"
+    A0_243.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D7A55:
+db 74 0d
+"Growtopia.exe"+2D7A57:
+db f3 0f 59 d7
+]])
+  else
+    A0_243.hint = "nc"
+    A0_243.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D7A55:
+db 90 90
+"Growtopia.exe"+2D7A57:
+db 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel115MouseDown(A0_247, A1_248, A2_249, A3_250)
+  if A0_247.hint == "nc" then
+    A0_247.hint = "c"
+    A0_247.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+497090:
+db 4f 6e
+]])
+  else
+    A0_247.hint = "nc"
+    A0_247.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+497090:
+db 90 90
+]])
+  end
+end
+function UDF1_CEPanel117MouseDown(A0_251, A1_252, A2_253, A3_254)
+  if A0_251.hint == "nc" then
+    A0_251.hint = "c"
+    A0_251.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+31C647:
+db 75 0C
+]])
+  else
+    A0_251.hint = "nc"
+    A0_251.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+31C647:
+db 90 90
+]])
+  end
+end
+function UDF1_CEPanel119MouseDown(A0_255, A1_256, A2_257, A3_258)
+  if A0_255.hint == "nc" then
+    A0_255.hint = "c"
+    A0_255.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+1F7EE9:
+db 74
+]])
+  else
+    A0_255.hint = "nc"
+    A0_255.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+1F7EE9:
+db 75
+]])
+  end
+end
+function UDF1_CEPanel121MouseDown(A0_259, A1_260, A2_261, A3_262)
+  if A0_259.hint == "nc" then
+    A0_259.hint = "c"
+    A0_259.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2E4766:
+db F3 0F 11 4A 04
+]])
+  else
+    A0_259.hint = "nc"
+    A0_259.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2E4766:
+db 90 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel123MouseDown(A0_263, A1_264, A2_265, A3_266)
+  if A0_263.hint == "nc" then
+    A0_263.hint = "c"
+    A0_263.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2DB11D:
+db e9 50 03 00 00
+]])
+  else
+    A0_263.hint = "nc"
+    A0_263.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2DB11D:
+db 90 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel125MouseDown(A0_267, A1_268, A2_269, A3_270)
+  if A0_267.hint == "nc" then
+    A0_267.hint = "c"
+    A0_267.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+32E713:
+movaps xmm12,[r11-70]
+]])
+  else
+    A0_267.hint = "nc"
+    A0_267.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+32E713:
+movaps xmm12,[r11-50]
+]])
+  end
+end
+function UDF1_CEPanel127MouseDown(A0_271, A1_272, A2_273, A3_274)
+  if A0_271.hint == "nc" then
+    A0_271.hint = "c"
+    A0_271.color = "$0032281F"
+    L0_0("Dev Zoom").value = 0
+    L0_0("Dev Zoom").active = false
+  else
+    A0_271.hint = "nc"
+    A0_271.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    L0_0("Dev Zoom").value = 1
+    L0_0("Dev Zoom").active = true
+  end
+end
+function UDF1_CEPanel129MouseDown(A0_275, A1_276, A2_277, A3_278)
+  if A0_275.hint == "nc" then
+    A0_275.hint = "c"
+    A0_275.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D8A1F:
+db 74 3F
+]])
+  else
+    A0_275.hint = "nc"
+    A0_275.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D8A1F:
+db 90 90
+]])
+  end
+end
+function UDF1_CEPanel131MouseDown(A0_279, A1_280, A2_281, A3_282)
+  if A0_279.hint == "nc" then
+    A0_279.hint = "c"
+    A0_279.color = "$0032281F"
+    autoAssemble([[
+"Growtopia.exe"+2D7B4A:
+db 74
+]])
+  else
+    A0_279.hint = "nc"
+    A0_279.color = "0x" .. string.format("%02X", b) .. string.format("%02X", g) .. string.format("%02X", r)
+    autoAssemble([[
+"Growtopia.exe"+2D7B4A:
+db 75
+]])
+  end
+end
+function UDF1_CEPanel134MouseDown(A0_283, A1_284, A2_285, A3_286)
+  local L4_287
+  L4_287 = UDF1
+  L4_287 = L4_287.CEPanel134
+  L4_287.color = "$0044382B"
+end
+function UDF1_CEPanel134MouseUp(A0_288, A1_289, A2_290, A3_291)
+  local L4_292
+  L4_292 = UDF1
+  L4_292 = L4_292.CEPanel134
+  L4_292.color = "$002E241D"
+end
+function UDF1_CEPanel134Click(A0_293)
+  shellExecute(os.getenv("localappdata") .. "\\Growtopia\\Growtopia.exe")
+end
+function UDF1_CEPanel148MouseDown(A0_294, A1_295, A2_296, A3_297)
+  local L4_298
+  L4_298 = UDF1
+  L4_298 = L4_298.CEPanel148
+  L4_298.color = "$00564736"
+end
+function UDF1_CEPanel148MouseUp(A0_299, A1_300, A2_301, A3_302)
+  local L4_303
+  L4_303 = UDF1
+  L4_303 = L4_303.CEPanel148
+  L4_303.color = "$00342B21"
+end
+function UDF1_CEPanel150MouseDown(A0_304, A1_305, A2_306, A3_307)
+  local L4_308
+  L4_308 = UDF1
+  L4_308 = L4_308.CEPanel150
+  L4_308.color = "$00564736"
+end
+function UDF1_CEPanel150MouseUp(A0_309, A1_310, A2_311, A3_312)
+  local L4_313
+  L4_313 = UDF1
+  L4_313 = L4_313.CEPanel150
+  L4_313.color = "$00342B21"
+end
+function UDF1_CEPanel152MouseDown(A0_314, A1_315, A2_316, A3_317)
+  local L4_318
+  L4_318 = UDF1
+  L4_318 = L4_318.CEPanel152
+  L4_318.color = "$00564736"
+end
+function UDF1_CEPanel152MouseUp(A0_319, A1_320, A2_321, A3_322)
+  local L4_323
+  L4_323 = UDF1
+  L4_323 = L4_323.CEPanel152
+  L4_323.color = "$00342B21"
+end
+function UDF1_CEPanel154MouseDown(A0_324, A1_325, A2_326, A3_327)
+  local L4_328
+  L4_328 = UDF1
+  L4_328 = L4_328.CEPanel154
+  L4_328.color = "$00564736"
+end
+function UDF1_CEPanel154MouseUp(A0_329, A1_330, A2_331, A3_332)
+  local L4_333
+  L4_333 = UDF1
+  L4_333 = L4_333.CEPanel154
+  L4_333.color = "$00342B21"
+end
+function UDF1_CEPanel156MouseDown(A0_334, A1_335, A2_336, A3_337)
+  local L4_338
+  L4_338 = UDF1
+  L4_338 = L4_338.CEPanel156
+  L4_338.color = "$00564736"
+end
+function UDF1_CEPanel156MouseUp(A0_339, A1_340, A2_341, A3_342)
+  local L4_343
+  L4_343 = UDF1
+  L4_343 = L4_343.CEPanel156
+  L4_343.color = "$00342B21"
+end
+function UDF1_CEPanel158MouseDown(A0_344, A1_345, A2_346, A3_347)
+  local L4_348
+  L4_348 = UDF1
+  L4_348 = L4_348.CEPanel158
+  L4_348.color = "$00564736"
+end
+function UDF1_CEPanel158MouseUp(A0_349, A1_350, A2_351, A3_352)
+  local L4_353
+  L4_353 = UDF1
+  L4_353 = L4_353.CEPanel158
+  L4_353.color = "$00342B21"
+end
+function UDF1_CEPanel160MouseDown(A0_354, A1_355, A2_356, A3_357)
+  local L4_358
+  L4_358 = UDF1
+  L4_358 = L4_358.CEPanel160
+  L4_358.color = "$00564736"
+end
+function UDF1_CEPanel160MouseUp(A0_359, A1_360, A2_361, A3_362)
+  local L4_363
+  L4_363 = UDF1
+  L4_363 = L4_363.CEPanel160
+  L4_363.color = "$00342B21"
+end
+function UDF1_CEPanel162MouseDown(A0_364, A1_365, A2_366, A3_367)
+  local L4_368
+  L4_368 = UDF1
+  L4_368 = L4_368.CEPanel162
+  L4_368.color = "$00564736"
+end
+function UDF1_CEPanel162MouseUp(A0_369, A1_370, A2_371, A3_372)
+  local L4_373
+  L4_373 = UDF1
+  L4_373 = L4_373.CEPanel162
+  L4_373.color = "$00342B21"
+end
+function UDF1_CEPanel164MouseDown(A0_374, A1_375, A2_376, A3_377)
+  local L4_378
+  L4_378 = UDF1
+  L4_378 = L4_378.CEPanel164
+  L4_378.color = "$00564736"
+end
+function UDF1_CEPanel164MouseUp(A0_379, A1_380, A2_381, A3_382)
+  local L4_383
+  L4_383 = UDF1
+  L4_383 = L4_383.CEPanel164
+  L4_383.color = "$00342B21"
+end
+function UDF1_CEPanel166MouseDown(A0_384, A1_385, A2_386, A3_387)
+  local L4_388
+  L4_388 = UDF1
+  L4_388 = L4_388.CEPanel166
+  L4_388.color = "$00564736"
+end
+function UDF1_CEPanel166MouseUp(A0_389, A1_390, A2_391, A3_392)
+  local L4_393
+  L4_393 = UDF1
+  L4_393 = L4_393.CEPanel166
+  L4_393.color = "$00342B21"
+end
+function UDF1_CEPanel168Click(A0_394)
+  L0_0("Hair").value = UDF1.CEEdit1.text
+  L0_0("Hand").value = UDF1.CEEdit2.text
+  L0_0("Hat").value = UDF1.CEEdit3.text
+  L0_0("Mask").value = UDF1.CEEdit4.text
+  L0_0("Neck").value = UDF1.CEEdit5.text
+  L0_0("Pants").value = UDF1.CEEdit6.text
+  L0_0("Shirt").value = UDF1.CEEdit7.text
+  L0_0("Shoes").value = UDF1.CEEdit8.text
+  L0_0("Wing").value = UDF1.CEEdit9.text
+  L0_0("Eye Drop").value = UDF1.CEEdit10.text
+end
+function UDF1_CEPanel148Click(A0_395)
+  L0_0("Hair").Value = UDF1.CEEdit1.text
+end
+function UDF1_CEPanel150Click(A0_396)
+  L0_0("Hand").Value = UDF1.CEEdit2.text
+end
+function UDF1_CEPanel152Click(A0_397)
+  L0_0("Hat").Value = UDF1.CEEdit3.text
+end
+function UDF1_CEPanel154Click(A0_398)
+  L0_0("Mask").Value = UDF1.CEEdit4.text
+end
+function UDF1_CEPanel156Click(A0_399)
+  L0_0("Neck").Value = UDF1.CEEdit5.text
+end
+function UDF1_CEPanel158Click(A0_400)
+  L0_0("Pants").Value = UDF1.CEEdit6.text
+end
+function UDF1_CEPanel160Click(A0_401)
+  L0_0("Shirt").Value = UDF1.CEEdit7.text
+end
+function UDF1_CEPanel162Click(A0_402)
+  L0_0("Shoes").Value = UDF1.CEEdit8.text
+end
+function UDF1_CEPanel164Click(A0_403)
+  L0_0("Wing").Value = UDF1.CEEdit9.text
+end
+function UDF1_CEPanel166Click(A0_404)
+  L0_0("Eye Drop").Value = UDF1.CEEdit10.text
+end
+function UDF1_CEPanel169MouseDown(A0_405, A1_406, A2_407, A3_408)
+  if A0_405.hint == "nc" then
+    A0_405.hint = "c"
+    A0_405.color = "$00342B21"
+    L0_0("Hair").active = false
+    L0_0("Hand").active = false
+    L0_0("Hat").active = false
+    L0_0("Mask").active = false
+    L0_0("Neck").active = false
+    L0_0("Pants").active = false
+    L0_0("Shirt").active = false
+    L0_0("Shoes").active = false
+    L0_0("Wing").active = false
+    L0_0("Eye Drop").active = false
+  else
+    A0_405.hint = "nc"
+    A0_405.color = "$00CC8C5E"
+    L0_0("Hair").active = true
+    L0_0("Hand").active = true
+    L0_0("Hat").active = true
+    L0_0("Mask").active = true
+    L0_0("Neck").active = true
+    L0_0("Pants").active = true
+    L0_0("Shirt").active = true
+    L0_0("Shoes").active = true
+    L0_0("Wing").active = true
+    L0_0("Eye Drop").active = true
+  end
+end
+function UDF1_CEPanel170Click(A0_409)
+  UDF1.CEEdit1.text = 0
+  UDF1.CEEdit2.text = 0
+  UDF1.CEEdit3.text = 0
+  UDF1.CEEdit4.text = 0
+  UDF1.CEEdit5.text = 0
+  UDF1.CEEdit6.text = 0
+  UDF1.CEEdit7.text = 0
+  UDF1.CEEdit8.text = 0
+  UDF1.CEEdit9.text = 0
+  UDF1.CEEdit10.text = 0
+  L0_0("Hair").value = 0
+  L0_0("Hand").value = 0
+  L0_0("Hat").value = 0
+  L0_0("Mask").value = 0
+  L0_0("Neck").value = 0
+  L0_0("Pants").value = 0
+  L0_0("Shirt").value = 0
+  L0_0("Shoes").value = 0
+  L0_0("Wing").value = 0
+  L0_0("Eye Drop").value = 0
+end
+function UDF1_CEPanel168MouseDown(A0_410, A1_411, A2_412, A3_413)
+  local L4_414
+  L4_414 = UDF1
+  L4_414 = L4_414.CEPanel168
+  L4_414.color = "$00564736"
+end
+function UDF1_CEPanel168MouseUp(A0_415, A1_416, A2_417, A3_418)
+  local L4_419
+  L4_419 = UDF1
+  L4_419 = L4_419.CEPanel168
+  L4_419.color = "$00342B21"
+end
+function UDF1_CEPanel170MouseUp(A0_420, A1_421, A2_422, A3_423)
+  local L4_424
+  L4_424 = UDF1
+  L4_424 = L4_424.CEPanel170
+  L4_424.color = "$00342B21"
+end
+function UDF1_CEPanel170MouseDown(A0_425, A1_426, A2_427, A3_428)
+  local L4_429
+  L4_429 = UDF1
+  L4_429 = L4_429.CEPanel170
+  L4_429.color = "$00564736"
+end
+function UDF1_CEPanel172MouseDown(A0_430, A1_431, A2_432, A3_433)
+  if A0_430.hint == "nc" then
+    A0_430.hint = "c"
+    A0_430.color = "$00342B21"
+    autoAssemble([[
+"Growtopia.exe"+3462DC:
+db 75 3e
+]])
+  else
+    A0_430.hint = "nc"
+    A0_430.color = "$00CC8C5E"
+    autoAssemble([[
+"Growtopia.exe"+3462DC:
+db 90 90
+]])
+  end
+end
+function UDF1_CEPanel174MouseDown(A0_434, A1_435, A2_436, A3_437)
+  if A0_434.hint == "nc" then
+    A0_434.hint = "c"
+    A0_434.color = "$00342B21"
+    autoAssemble([[
+"Growtopia.exe"+3463E5:
+db 0f 85 9b 00 00 00
+]])
+  else
+    A0_434.hint = "nc"
+    A0_434.color = "$00CC8C5E"
+    autoAssemble([[
+"Growtopia.exe"+3463E5:
+db 90 90 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel176MouseDown(A0_438, A1_439, A2_440, A3_441)
+  if A0_438.hint == "nc" then
+    A0_438.hint = "c"
+    A0_438.color = "$00342B21"
+    autoAssemble([[
+"Growtopia.exe"+3469D9:
+db 0f 85 57 01 00 00
+]])
+  else
+    A0_438.hint = "nc"
+    A0_438.color = "$00CC8C5E"
+    autoAssemble([[
+"Growtopia.exe"+3469D9:
+db 90 90 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel180MouseDown(A0_442, A1_443, A2_444, A3_445)
+  if A0_442.hint == "nc" then
+    A0_442.hint = "c"
+    A0_442.color = "$00342B21"
+    autoAssemble([[
+"Growtopia.exe"+34614E:
+db 0f 85 7f 01 00 00
+]])
+  else
+    A0_442.hint = "nc"
+    A0_442.color = "$00CC8C5E"
+    autoAssemble([[
+"Growtopia.exe"+34614E:
+db 90 90 90 90 90 90
+]])
+  end
+end
+function UDF1_CEPanel178MouseDown(A0_446, A1_447, A2_448, A3_449)
+  if A0_446.hint == "nc" then
+    A0_446.hint = "c"
+    A0_446.color = "$00342B21"
+    autoAssemble([[
+"Growtopia.exe"+B7A87:
+db 75 30
+]])
+  else
+    A0_446.hint = "nc"
+    A0_446.color = "$00CC8C5E"
+    autoAssemble([[
+"Growtopia.exe"+B7A87:
+db 90 90
+]])
+  end
+end
